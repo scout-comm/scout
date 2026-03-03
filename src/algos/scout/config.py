@@ -1,4 +1,4 @@
-# Training config for SCOUT. Kept in one place so the main loop stays readable.
+# Training config for SCoUT. Kept in one place so the main loop stays readable.
 from __future__ import annotations
 from dataclasses import dataclass, field
 import torch
@@ -61,7 +61,6 @@ class TrainCfg:
     imp_campaign_cost: bool = True
 
     pretrained_filename_battle: str = "battle.pt"
-    pretrained_filename_advpursuit: str = "adv_pursuit.pt"
 
     k_macro: int = 10
     m_groups: int = 8

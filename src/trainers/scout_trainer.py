@@ -1297,5 +1297,5 @@ def train(cfg: TrainCfg):
 if __name__ == "__main__":
     cfg = TrainCfg()
     # To switch task:
-    # cfg.task = "advpursuit_pretrained"; cfg.map_size = 50
+    # cfg.task = "pursuit_base"; cfg.map_size = 16
     train(cfg)

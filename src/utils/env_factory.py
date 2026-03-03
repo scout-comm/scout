@@ -1,4 +1,4 @@
-# Builds Battle and AdvPursuit envs only. Requires ExpoComm in third_party (see README).
+# Builds Battle (MAgent) and Pursuit (PettingZoo SISL) envs. Battle uses ExpoComm submodule; Pursuit uses src.wrappers.
 import sys
 from pathlib import Path
 
@@ -13,10 +13,7 @@ from third_party.ExpoComm.src.envs.battle_wrappers import (
     Battle_w_PretrainedOpp,
     _BattleWrapper,
 )
-from third_party.ExpoComm.src.envs.adv_pursuit_wrappers import (
-    AdvPursuit_w_PretrainedOpp,
-    _AdvPursuitWrapper,
-)
+from src.wrappers.pursuit_wrappers import _PursuitWrapper
 
 
 def make_env(cfg):
@@ -38,24 +35,23 @@ def make_env(cfg):
             minimap_mode=cfg.minimap_mode,
             seed=cfg.seed,
         )
-    elif cfg.task == "advpursuit_pretrained":
-        env = AdvPursuit_w_PretrainedOpp(
-            map_name="adversarial_pursuit_view8",
-            map_size=cfg.map_size,
-            max_cycles=cfg.max_cycles,
-            minimap_mode=cfg.minimap_mode,
+    elif cfg.task == "pursuit_base":
+        env = _PursuitWrapper(
+            map_name=getattr(cfg, "pursuit_map_name", "pursuit_v3"),
             seed=cfg.seed,
-            pretrained_ckpt=cfg.pretrained_filename_advpursuit,
-            global_reward=cfg.global_reward,
-        )
-    elif cfg.task == "advpursuit_base":
-        env = _AdvPursuitWrapper(
-            map_name="adversarial_pursuit_view8",
-            map_size=cfg.map_size,
             max_cycles=cfg.max_cycles,
-            minimap_mode=cfg.minimap_mode,
-            seed=cfg.seed,
+            x_size=getattr(cfg, "x_size", getattr(cfg, "map_size", 16)),
+            y_size=getattr(cfg, "y_size", getattr(cfg, "map_size", 16)),
+            n_pursuers=getattr(cfg, "n_pursuers", 64),
+            n_evaders=getattr(cfg, "n_evaders", 12),
+            obs_range=getattr(cfg, "obs_range", 7),
+            surround=True,
+            n_catch=getattr(cfg, "n_catch", 4),
+            local_ratio=getattr(cfg, "local_ratio", 1.0),
+            freeze_evaders=getattr(cfg, "freeze_evaders", False),
         )
     else:
-        raise ValueError(f"Unknown task: {cfg.task}. This release supports battle_* and advpursuit_* only.")
+        raise ValueError(
+            f"Unknown task: {cfg.task}. Supported: battle_* and pursuit_base only."
+        )
     return env
