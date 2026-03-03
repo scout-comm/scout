@@ -1,0 +1,7 @@
+torch>=1.12
+numpy
+tensorboard
+# ExpoComm / PettingZoo envs (adjust versions to match your ExpoComm submodule)
+# pettingzoo
+# supersuit
+# gym

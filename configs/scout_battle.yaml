@@ -1,0 +1,14 @@
+task: battle_pretrained
+map_name: battle_view7
+map_size: 45
+max_cycles: 500
+seed: 0
+
+k_macro: 10
+m_groups: 8
+rollout_T: 2048
+iters: 2000
+hidden: 64
+lr_grouping: 3.0e-4
+save_dir: runs/scout_new/checkpoints
+tb_dir: runs/scout_new/tb
