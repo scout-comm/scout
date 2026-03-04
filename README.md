@@ -87,7 +87,7 @@ For `battle_pretrained`, the wrapper expects a pretrained checkpoint filename (e
 | `src/wrappers/` | `pursuit_wrappers.py` (PettingZoo SISL Pursuit), `magent.py`, `multiagentenv.py` |
 | `src/trainers/scout_trainer.py` | Main training entrypoint |
 | `configs/` | Example YAML (optional; main config is `TrainCfg` in code) |
-| `third_party/ExpoComm` | Submodule — [LXXXXR/ExpoComm](https://github.com/LXXXXR/ExpoComm) (Battle only) |
+| `third_party/ExpoComm` | Submodule — [LXXXXR/ExpoComm](https://github.com/LXXXXR/ExpoComm) |
 
 ## Usage
 
