@@ -14,19 +14,6 @@ PyTorch implementation of SCoUT for multi-agent environments with learned commun
 
 ## Citation
 
-If you use this code or find it helpful, please cite our paper:
-
-```bibtex
-@inproceedings{scout2025rlc,
-  title     = {SCoUT: Structured Communication with Learned Grouping in Multi-Agent Reinforcement Learning},
-  author    = {Anonymous},
-  booktitle = {Reinforcement Learning Conference (RLC)},
-  year      = {2025},
-  url       = {https://github.com/scout-comm/scout},
-  note      = {Under Review}
-}
-```
-
 *BibTeX will be updated upon publication.*
 
 ---
