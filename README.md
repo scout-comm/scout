@@ -2,6 +2,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Status: Under Review](https://img.shields.io/badge/Status-Under%20Review-blue.svg)](https://github.com/scout-comm/scout)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Build](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/scout-comm/scout)
+[![codecov](https://codecov.io/gh/scout-comm/scout/graph/badge.svg)](https://codecov.io/gh/scout-comm/scout)
 
 **Website:** [https://scout-comm.github.io](https://scout-comm.github.io)
 
